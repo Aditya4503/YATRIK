@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Kalaram Mandir Design System - Devotional Theme
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Sacred Colors - Devotional Palette */
+    --background: 45 100% 98%; /* Sacred Cream */
+    --foreground: 20 25% 15%; /* Deep Brown */
+
+    --card: 0 0% 100%; /* Pure White */
+    --card-foreground: 20 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 25% 15%;
+
+    /* Saffron Primary - Sacred Temple Orange */
+    --primary: 30 100% 60%; /* Saffron */
+    --primary-foreground: 0 0% 100%;
+
+    /* Golden Secondary - Temple Gold */
+    --secondary: 43 74% 49%; /* Temple Gold */
+    --secondary-foreground: 0 0% 100%;
+
+    /* Soft Devotional Muted */
+    --muted: 45 60% 95%; /* Light Cream */
+    --muted-foreground: 30 15% 50%;
+
+    /* Warm Accent */
+    --accent: 35 100% 85%; /* Light Saffron */
+    --accent-foreground: 20 25% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 45 40% 90%; /* Soft Cream Border */
+    --input: 45 40% 90%;
+    --ring: 30 100% 60%; /* Saffron Ring */
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Evening Temple Theme */
+    --background: 20 25% 8%; /* Deep Temple Brown */
+    --foreground: 45 80% 95%; /* Warm Light */
+
+    --card: 20 25% 10%;
+    --card-foreground: 45 80% 95%;
+
+    --popover: 20 25% 10%;
+    --popover-foreground: 45 80% 95%;
+
+    /* Glowing Saffron in Dark */
+    --primary: 30 100% 70%; /* Bright Saffron */
+    --primary-foreground: 20 25% 8%;
+
+    /* Warm Gold in Dark */
+    --secondary: 43 80% 60%; /* Warm Gold */
+    --secondary-foreground: 20 25% 8%;
+
+    --muted: 20 20% 15%; /* Dark Muted */
+    --muted-foreground: 45 30% 70%;
+
+    --accent: 35 90% 75%; /* Warm Accent */
+    --accent-foreground: 20 25% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 20 20% 20%; /* Dark Border */
+    --input: 20 20% 20%;
+    --ring: 30 100% 70%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+
+  /* Custom Devotional Gradients */
+  .gradient-saffron {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  }
+
+  .gradient-temple {
+    background: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+  }
+
+  .shadow-sacred {
+    box-shadow: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+  }
+
+  .shadow-temple {
+    box-shadow: 0 4px 20px -4px hsl(var(--secondary) / 0.15);
+  }
+
+  /* Sacred Animations */
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    to {
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+    }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
